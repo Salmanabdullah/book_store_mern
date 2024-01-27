@@ -83,7 +83,21 @@ app.put("/books/:id", async (req, res) => {
   }
 });
 
+//route to delete a book from database
+app.delete("/books/:id", async (req, res) => {
+  try {
+    const {id} = req.params;
+    const result = await Book.findByIdAndDelete(id);
 
+    if (!result) {
+      return res.status(404).json({ message: "Book not found" });
+    }
+    return res.status(200).send({ message: "Book is deleted successfully" });
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({ message: error.message });
+  }
+});
 
 
 // database connection
