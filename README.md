@@ -4,3 +4,4 @@
 - express
 - nodemon
 - dotenv
+- mongoose
