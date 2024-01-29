@@ -5,3 +5,6 @@
 - nodemon
 - dotenv
 - mongoose
+- cors
+- tailwindcss
+
