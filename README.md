@@ -1,4 +1,4 @@
-# book_store_mern
+# book_store_mern using Vite + React
 
 ### dependencies
 - express
@@ -7,4 +7,7 @@
 - mongoose
 - cors
 - tailwindcss
+- axios
+- react-icons
+
 
