@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Spinner from "../components/Spinner";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
 import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md";
+import { Link } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -19,7 +19,7 @@ const Home = () => {
       })
       .catch((err) => {
         console.log(err);
-        setLoading(false)
+        setLoading(false);
       });
   }, []);
   return (
