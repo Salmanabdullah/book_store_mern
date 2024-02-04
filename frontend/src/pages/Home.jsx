@@ -9,6 +9,7 @@ import Spinner from "../components/Spinner";
 const Home = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     setLoading(true);
     axios
@@ -24,7 +25,7 @@ const Home = () => {
   }, []);
   return (
     <div className="p-4">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mr-2 ml-2">
         <h1 className="text-3xl my-8">Books List</h1>
         <Link to={`/books/create`}>
           <MdOutlineAddBox className="text-sky-800 text-4xl" />
@@ -65,7 +66,7 @@ const Home = () => {
                 <td className="border border-slate-600 rounded-md text-center">
                   <div className="flex justify-center gap-x-4">
                     <Link to={`/books/details/${book._id}`}>
-                      <BsInfoCircle className="text-green-800 text-2xl" />
+                      <BsInfoCircle className="text-green-900 text-2xl" />
                     </Link>
 
                     <Link to={`/books/edit/${book._id}`}>

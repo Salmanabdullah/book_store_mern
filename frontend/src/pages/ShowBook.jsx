@@ -21,7 +21,7 @@ const ShowBook = () => {
         console.log(err);
         setLoading(false);
       });
-  },[]);
+  }, [id]);
 
   return (
     <div className="p-4">
@@ -45,13 +45,13 @@ const ShowBook = () => {
           </div>
           <div className="my-4">
             <span className="text-xl mr-4 text-gray-500">Create Time :</span>
-            <span>{new Date(book.createdAt).toString()}</span>
+            <span>{new Date(book.createdAt).toLocaleString()}</span>
           </div>
           <div className="my-4">
             <span className="text-xl mr-4 text-gray-500">
               Last Updated Time :
             </span>
-            <span>{new Date(book.updatedAt).toString()}</span>
+            <span>{new Date(book.updatedAt).toLocaleString()}</span>
           </div>
         </div>
       )}

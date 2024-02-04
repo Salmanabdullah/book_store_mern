@@ -27,7 +27,7 @@ const EditBook = () => {
         setLoading(false);
         console.log(err);
       });
-  }, []);
+  }, [id]);
 
   //to save users edited input
   const handleEditBook = () => {

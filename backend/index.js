@@ -1,9 +1,8 @@
-import express from "express";
-import dotenv from "dotenv";
-import mongoose from "mongoose";
-import { Book } from "./models/bookModel.js";
-import booksRoute from "./routes/booksRoutes.js";
 import cors from "cors";
+import dotenv from "dotenv";
+import express from "express";
+import mongoose from "mongoose";
+import booksRoute from "./routes/booksRoutes.js";
 
 dotenv.config();
 
