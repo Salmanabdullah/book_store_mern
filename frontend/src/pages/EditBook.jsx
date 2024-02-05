@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
+import { useSnackbar } from "notistack";
+
 
 const EditBook = () => {
   const [title, setTitle] = useState("");
@@ -11,6 +13,8 @@ const EditBook = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
+  const { enqueueSnackbar } = useSnackbar();
+
 
   //to get book info from database
   useEffect(() => {
@@ -41,10 +45,14 @@ const EditBook = () => {
       .put(`http://localhost:5000/books/${id}`, data)
       .then(() => {
         setLoading(false);
+        enqueueSnackbar("Book has been edited successfully", {
+          variant: "success",
+        });
         navigate("/");
       })
       .catch((err) => {
         setLoading(false);
+        enqueueSnackbar("An error has occured", { variant: "error" });
         console.log(err);
       });
   };

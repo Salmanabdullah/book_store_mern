@@ -9,5 +9,7 @@
 - tailwindcss
 - axios
 - react-icons
+- notistack
+
 
 
