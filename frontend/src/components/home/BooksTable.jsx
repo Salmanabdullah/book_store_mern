@@ -38,6 +38,7 @@ const BooksTable = ({ books }) => {
             </td>
             <td className="border border-slate-600 rounded-md text-center">
               <div className="flex justify-center gap-x-4">
+                
                 <Link to={`/books/details/${book._id}`}>
                   <BsInfoCircle className="text-green-900 text-2xl" />
                 </Link>

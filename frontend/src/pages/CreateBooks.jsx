@@ -11,7 +11,7 @@ const CreateBooks = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  //to save users input 
+  //to save users input
   const handleSaveBook = () => {
     const data = {
       title,
@@ -25,8 +25,8 @@ const CreateBooks = () => {
         setLoading(false);
         navigate("/");
       })
-      .catch(err =>{
-        setLoading(false)
+      .catch((err) => {
+        setLoading(false);
         console.log(err);
       });
   };
@@ -35,7 +35,7 @@ const CreateBooks = () => {
       <BackButton />
       <h1 className="text-3xl my-4">Create Book</h1>
       {loading ? <Spinner /> : ""}
-      <div className="flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
+      <div className="flex flex-col border-2 border-sky-400 rounded-xl max-w-xl p-4 mx-auto">
         <div className="my-4">
           <label className="text-xl mr-4 text-gray-500">Title</label>
           <input
@@ -63,7 +63,10 @@ const CreateBooks = () => {
             onChange={(e) => setPublishYear(e.target.value)}
           />
         </div>
-        <button className="p-2 bg-sky-400 m-8 w-[200px] mx-auto rounded-xl text-xl" onClick={handleSaveBook}>
+        <button
+          className="p-2 bg-sky-400 m-8 w-[200px] max-w-full mx-auto rounded-xl text-xl"
+          onClick={handleSaveBook}
+        >
           Save
         </button>
       </div>

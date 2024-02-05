@@ -12,6 +12,7 @@ const BooksCard = ({ books }) => {
   );
 };
 
+//PropType
 BooksCard.propTypes = {
   books: PropTypes.array.isRequired,
 };
