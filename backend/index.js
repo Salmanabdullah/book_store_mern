@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 import booksRoute from "./routes/booksRoutes.js";
+import signUpRoute from "./routes/signUpRoute.js";
 
 dotenv.config();
 
@@ -12,7 +13,7 @@ const app = express();
 app.use(express.json());
 
 // Middleware to handle cors policy
-app.use(cors())
+app.use(cors());
 //app.use(
 //  cors({
 //    origin: "http://localhost:3000",
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 
 //routes
 app.use("/books", booksRoute);
+app.use("/users", signUpRoute);
 
 // database connection
 mongoose
